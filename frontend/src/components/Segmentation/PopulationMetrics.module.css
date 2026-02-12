@@ -1,0 +1,367 @@
+.section {
+  margin-bottom: 0;
+}
+
+.topRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.4fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .topRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.risingCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.risingMain {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.risingTitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.risingValue {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ef4444;
+}
+
+.risingSub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.risingChip {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.risingChipIcon {
+  font-size: 0.8rem;
+}
+
+.risingIconWrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #fee2e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f97316;
+}
+
+.risingIcon {
+  font-size: 1.1rem;
+}
+
+.statCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.statMain {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.statTitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.statSub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.statIconWrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0ea5e9;
+}
+
+.statIcon {
+  font-size: 1.1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1.2fr 0.9fr;
+  gap: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.cardValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.cardSub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.summaryLabel {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.summaryValue {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.trendUp {
+  color: var(--success);
+  font-weight: 500;
+}
+
+/* Uniform height and top-aligned headers for top row cards */
+.topRow .statCard,
+.topRow .risingCard,
+.topRow .card {
+  min-height: 220px;
+  height: 220px;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.topRow .card {
+  padding: 1rem 1.25rem;
+  min-width: 0; /* allow grid to constrain width so content can fill it */
+}
+
+.topRow .card .utilList {
+  flex: 1 1 0;
+  width: 100%;
+  min-width: 0;
+  gap: 0.4rem;
+}
+
+.topRow .card .cardTitle {
+  margin: 0 0 0.5rem 0;
+  flex-shrink: 0;
+}
+
+.chartWrap {
+  height: 220px;
+  min-height: 220px;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+.chartWrapSmall {
+  height: 200px;
+  min-height: 200px;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+.chartWrapHoriz {
+  height: 230px;
+  min-height: 230px;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+.chartWrapHorizSmall {
+  height: 180px;
+  min-height: 180px;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+.chartWrapSecondary {
+  display: none;
+}
+
+.chartWrapCombined {
+  height: 260px;
+  min-height: 260px;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+.chartCaption {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: center;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.utilList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+
+.utilRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.utilLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.utilValue {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.progressTrack {
+  width: 100%;
+  min-width: 0;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.2s ease;
+}
+
+.loading,
+.empty {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.empty {
+  color: var(--warning);
+}

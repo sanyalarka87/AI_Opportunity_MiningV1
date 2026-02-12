@@ -1,0 +1,56 @@
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #eef2f7;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-end;
+}
+
+.filtersLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-right: 0.5rem;
+}
+
+.filtersIcon {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.labelText {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.input,
+.select {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.45rem 0.65rem;
+  min-width: 130px;
+  font-size: 0.875rem;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.loading {
+  color: var(--text-muted);
+}

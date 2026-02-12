@@ -1,0 +1,49 @@
+:root {
+  /* Light blue theme palette */
+  --bg-primary: #e8f1ff; /* page background */
+  --bg-secondary: #f5f7ff; /* header / bars */
+  --bg-card: #ffffff; /* cards and panels */
+  --text-primary: #111827;
+  --text-muted: #6b7280;
+  --accent: #2563eb;
+  --accent-dim: rgba(37, 99, 235, 0.1);
+  --border: #e5e7eb;
+  --success: #16a34a;
+  --warning: #d97706;
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select {
+  font-family: inherit;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

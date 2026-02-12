@@ -1,0 +1,750 @@
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.25rem 1.5rem 2rem;
+  width: 100%;
+}
+
+.toolbar {
+  margin-bottom: 1rem;
+}
+
+.backBtn {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.backBtn:hover {
+  background: var(--bg-secondary);
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.segmentName {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.segmentDesc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.topPanel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .topPanel {
+    grid-template-columns: 1fr;
+  }
+}
+
+.explainSection {
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+.costDriversSection {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.costDriversTitle {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.costDriversSubtitle {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.explainTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.explainText {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-primary);
+}
+
+/* Two panels: each panel is a row of 4 cards */
+.panel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .panel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.cardTitle {
+  margin: 0;
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.cardQuestion {
+  margin: 0;
+  padding: 0.25rem 1rem 0.4rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+  flex-shrink: 0;
+}
+
+.cardBody {
+  padding: 0.75rem 1rem;
+  flex: 1;
+  min-height: 0;
+}
+
+.cardEmpty {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding: 0.5rem 0;
+}
+
+/* Legacy section (cost drivers, interventions) */
+.section {
+  margin-bottom: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.sectionTitle {
+  margin: 0;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.sectionBody {
+  padding: 1rem 1.25rem;
+}
+
+.metricRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.card .metricRow {
+  padding: 0.3rem 0;
+  font-size: 0.8rem;
+}
+
+.card .metricRow:last-child {
+  border-bottom: none;
+}
+
+.metricRow:last-child {
+  border-bottom: none;
+}
+
+.metricLabel {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.metricValue {
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+/* ========================= */
+/*  Visual components: bars, badges, funnel, gauge, stat highlights  */
+/* ========================= */
+
+/* --- Progress bar row --- */
+.vizRow {
+  margin-bottom: 0.55rem;
+}
+.vizLabel {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+.vizBarWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.vizTrack {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.vizFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+.vizValue {
+  min-width: 3rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* --- Stat highlights (big numbers) --- */
+.statRow {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+.statHighlight {
+  flex: 1;
+  text-align: center;
+}
+.statHighlightValue {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.statHighlightLabel {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.statHighlightSub {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+/* --- Badges --- */
+.badgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  align-items: center;
+  margin: 0.5rem 0;
+  font-size: 0.75rem;
+}
+.badgeLabel {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.badge_high {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.badge_medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+.badge_low {
+  background: #d1fae5;
+  color: #065f46;
+}
+.badge_yes {
+  background: #dbeafe;
+  color: #1e40af;
+}
+.badge_no {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+.badge_neutral {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* --- Funnel steps (opportunity) --- */
+.funnelStep {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+.funnelLabel {
+  width: 5.5rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: right;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.funnelBarWrap {
+  flex: 1;
+  height: 16px;
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.funnelBar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+.funnelValue {
+  min-width: 3.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+.funnelDivider {
+  height: 1px;
+  background: var(--border);
+  margin: 0.5rem 0;
+}
+
+/* --- Gauge (action readiness) --- */
+.gaugeWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+.gaugeSvg {
+  width: 110px;
+  height: 65px;
+}
+
+.driverList,
+.interventionList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.driverList li,
+.interventionItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.driverList li:last-child,
+.interventionItem:last-child {
+  border-bottom: none;
+}
+
+.driverCategory,
+.interventionName {
+  flex: 1;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.driverAmount,
+.interventionSavings {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.driverTrend {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.interventionImpact {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+}
+
+.loading,
+.error {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.error {
+  color: var(--warning);
+}
+
+/* Bottom Panel: Opportunity Agent (half) + QnA Agent (half) */
+.bottomPanel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .bottomPanel {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Opportunity Agent Card - half width */
+.opportunityAgentCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.opportunityAgentPrompt {
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.opportunityDetailsBtn {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.opportunityDetailsBtn:hover {
+  background: #2563eb;
+  filter: brightness(1.05);
+}
+
+.opportunityDetailsBtn:active {
+  filter: brightness(0.95);
+}
+
+.opportunityDetailsWindow {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.opportunityDetailsContent {
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.opportunityDetailsContent::-webkit-scrollbar {
+  width: 8px;
+}
+
+.opportunityDetailsContent::-webkit-scrollbar-track {
+  background: var(--bg-card);
+  border-radius: 4px;
+}
+
+.opportunityDetailsContent::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.opportunityDetailsContent::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+.opportunityH3 {
+  margin: 1.5rem 0 0.75rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.opportunityH3:first-child {
+  margin-top: 0;
+}
+
+.opportunityH4 {
+  margin: 1rem 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.opportunityParagraph {
+  margin: 0.5rem 0;
+  color: var(--text-primary);
+}
+
+.opportunityBullet {
+  margin: 0.4rem 0 0.4rem 1rem;
+  color: var(--text-primary);
+}
+
+.opportunityBullet strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.opportunityNumbered {
+  margin: 0.4rem 0 0.4rem 1rem;
+  color: var(--text-primary);
+}
+
+.mappedOpportunitiesSection {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.mappedOpportunitiesList {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+.mappedOpportunitiesList li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.mappedOpportunityLink {
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.mappedOpportunityLink:hover {
+  text-decoration: underline;
+}
+
+.mappedOpportunityMeta {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* QnA Agent Card - half width */
+.qnaAgentCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.qnaAgentTitle {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.qnaInputRow {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.qnaInput {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.qnaInput:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.qnaInput::placeholder {
+  color: var(--text-muted);
+}
+
+.qnaSendBtn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.qnaSendBtn:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.qnaSendBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.qnaAnswerWrap {
+  margin-top: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+.qnaAnswerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.qnaAnswerTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.qnaAnswerCloseBtn {
+  background: none;
+  border: none;
+  padding: 0.2rem 0.4rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.qnaAnswerCloseBtn:hover {
+  color: var(--text-primary);
+  background: var(--bg-card);
+}
+
+.qnaExpandBtn {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  color: var(--accent);
+  cursor: pointer;
+  text-align: left;
+}
+
+.qnaExpandBtn:hover {
+  text-decoration: underline;
+}
+
+.qnaResponses {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 0.5rem 0.75rem;
+}
+
+.qnaUser {
+  text-align: right;
+  padding: 0.4rem 0.6rem;
+  background: rgba(37, 99, 235, 0.15);
+  border-radius: 8px;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.qnaAssistant {
+  padding: 0.4rem 0.6rem;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}

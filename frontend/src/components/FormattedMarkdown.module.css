@@ -1,0 +1,64 @@
+.root {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.root .h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.root .h2 {
+  margin: 1rem 0 0.35rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.root .h3 {
+  margin: 0.75rem 0 0.25rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.root .p {
+  margin: 0.25rem 0;
+}
+
+.root .li {
+  margin-left: 0;
+  margin-bottom: 0.35rem;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.root .li::before {
+  content: '• ';
+  position: absolute;
+  left: 0;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.root .spacer {
+  height: 0.5rem;
+}
+
+.root .hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0.75rem 0;
+}
+
+.root .blockquote {
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--border);
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.root strong {
+  font-weight: 600;
+}

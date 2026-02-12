@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btnSecondary {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.btnSecondary:hover:not(:disabled) {
+  background: var(--border);
+}
+
+.btnSecondary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
