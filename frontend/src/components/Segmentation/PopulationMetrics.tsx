@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { PopulationMetrics as PopulationMetricsType, getPopulationMetrics, getDashboardMetrics } from '../../api/client';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, BarChart, Bar, XAxis, YAxis } from 'recharts';
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, ReferenceLine } from 'recharts';
 import type { DashboardMetrics } from '../../types/dashboard';
 import styles from './PopulationMetrics.module.css';
 
@@ -104,6 +104,7 @@ export const PopulationMetrics: React.FC = () => {
     color: d.color,
     pmpm: d.pmpm,
   }));
+  const avgPmpm = org?.pmpm ?? 370;
 
   const costData = data.costDistribution?.length
     ? data.costDistribution
@@ -418,25 +419,29 @@ export const PopulationMetrics: React.FC = () => {
           </div>
         </div>
 
-        {/* PMPM across risk categories – horizontal bar */}
-        <div className={styles.card}>
+        {/* PMPM across risk categories – vertical bar */}
+        <div className={`${styles.card} ${styles.pmpmCard}`}>
           <h3 className={styles.cardTitle}>PMPM across risk categories</h3>
-          <div className={styles.chartWrapHorizSmall}>
+          <div className={styles.chartWrapPmpm}>
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
-                layout="vertical"
                 data={pmpmChartData}
-                margin={{ top: 4, right: 60, left: 4, bottom: 4 }}
+                margin={{ top: 12, right: 40, left: 8, bottom: 50 }}
+                barCategoryGap="35%"
+                barSize={45}
               >
-                <YAxis
-                  type="category"
+                <XAxis
                   dataKey="name"
-                  width={90}
-                  tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
-                  axisLine={false}
-                  tickLine={false}
+                  fontSize={11}
+                  tick={{ fill: 'var(--text-muted)', angle: -20, textAnchor: 'end' }}
+                  height={60}
+                  interval={0}
                 />
-                <XAxis type="number" hide />
+                <YAxis
+                  tick={{ fill: 'var(--text-muted)', fontSize: 10 }}
+                  tickFormatter={(val: number) => `$${val}`}
+                  width={60}
+                />
                 <Tooltip
                   contentStyle={{
                     background: 'var(--bg-card)',
@@ -446,21 +451,27 @@ export const PopulationMetrics: React.FC = () => {
                   }}
                   formatter={(val: number) => [`$${val.toFixed(2)}`, 'PMPM']}
                 />
+                <ReferenceLine
+                  y={avgPmpm}
+                  stroke="#6b7280"
+                  strokeDasharray="4 4"
+                  strokeWidth={2}
+                  label={{ value: `Avg: $${avgPmpm}`, position: 'right', fill: '#6b7280', fontSize: 9, offset: 5 }}
+                />
                 <Bar
                   dataKey="pmpm"
-                  radius={[4, 4, 4, 4]}
-                  barSize={18}
+                  radius={[4, 4, 0, 0]}
                   label={({ x, y, width, height, value }) => {
-                    const labelX = (x ?? 0) + (width ?? 0) + 8;
-                    const labelY = (y ?? 0) + (height ?? 0) / 2 + 4;
+                    const centerX = (x ?? 0) + (width ?? 0) / 2;
+                    const topY = (y ?? 0) - 6;
                     return (
                       <text
-                        x={labelX}
-                        y={labelY}
-                        textAnchor="start"
+                        x={centerX}
+                        y={topY}
+                        textAnchor="middle"
                         fill="#374151"
-                        fontSize={12}
-                        fontWeight={600}
+                        fontSize={10}
+                        fontWeight={500}
                       >
                         {`$${Number(value).toFixed(0)}`}
                       </text>

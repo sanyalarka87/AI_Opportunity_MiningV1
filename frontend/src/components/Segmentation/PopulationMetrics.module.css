@@ -130,7 +130,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 2.2fr 1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
@@ -270,10 +270,22 @@
 }
 
 .chartWrapCombined {
-  height: 260px;
-  min-height: 260px;
+  height: 340px;
+  min-height: 340px;
   margin-top: 0.5rem;
   position: relative;
+}
+
+.pmpmCard {
+  padding: 1rem 1.25rem !important;
+}
+
+.chartWrapPmpm {
+  height: 340px;
+  min-height: 340px;
+  margin-top: 0.5rem;
+  position: relative;
+  width: 100%;
 }
 
 .chartCaption {
